@@ -31,7 +31,7 @@ NOTE: If you do not have git installed, use this to get it:
 sudo apt-get -y install git
 ```
 ```
-sudo git clone https://github.com/Duffman791/adultmnsetup.git
+sudo git clone https://github.com/AdultChain/adultmnsetup.git
 cd adultmnsetup/  
 sudo bash adultconfig.sh
 ```
