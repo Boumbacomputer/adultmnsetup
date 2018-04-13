@@ -64,6 +64,8 @@ cd /$USER
 sleep 1
 sudo chmod +x /$USER/adultchaind
 sleep 1
+sudo chmod +x /$USER/adultchain-cli
+sleep 1
 sudo /$USER/adultchaind
 sleep 1
 echo "We are now changing the config file and masternode file"
