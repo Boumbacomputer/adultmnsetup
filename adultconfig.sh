@@ -88,6 +88,8 @@ sleep 2
 echo ""
 echo "Updating the masternode.conf file now"
 sleep 2
+echo "" >> /$USER/.adultchain/masternode.conf
+sleep 1
 echo "$ALIAS $IP:6969 $KEY $TX $INDEX" >> /$USER/.adultchain/masternode.conf
 sleep 1
 echo "Starting the daemon again as a masternode"
