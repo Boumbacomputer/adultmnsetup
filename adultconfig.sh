@@ -94,3 +94,5 @@ echo "Starting the daemon again as a masternode"
 sudo /$USER/adultchaind
 sleep 1
 echo ""
+cd /$USER
+echo "Please wait for the node to sync with the network"
