@@ -40,11 +40,13 @@ sudo bash adultconfig.sh
 
 # Part 3 - Editing your Windows Config File
 
-1. Download this zip folder: https://github.com/Duffman791/adultmnbat/archive/master.zip
-2. Extract the contents, and save the adultconf.bat file on your Desktop
-3. Run the adultconf.bat file and enter the required information in each step
-4. After you're done, the command window will disappear
-4. Start the wallet, and move to Part 4
+1. Open your wallet
+2. Go to Tools -> Open Masternode Configuration File
+3. Enter the following on one single line after the example configuration
+```<alias> <ip>:6969 <private_key> <tx_id> <index>```
+4. It should look something like this:
+``` MN1 66.65.43.32:6969 87dfjnKNfdjNlwomdmKKMdkaNIE a3eofJJkdlMlfKokfmalmofO 0```
+5. Save and close the file and restart your wallet.
 
 # Part 4 - Starting the Masternode
 
