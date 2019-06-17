@@ -1,9 +1,5 @@
 # Adultchain Masternode Install Script
 
-Stable and cheap host here https://m.do.co/c/b93026fab810
-
-XXX address if this helped you and you love me: XDXUX2vo8bmCZHTgJn77SzyFENcYf3r5LW
-
 # This guide is meant for setting up a HOT/COLD SETUP WITH WINDOWS AND LINUX.
 
 Use this script on a fresh install of Ubuntu 14.04 - MUST BE 14.04
@@ -53,17 +49,4 @@ sudo bash adultconfig.sh
 1. In your wallet, go to Masternodes
 2. Right-click your masternode and click "Start alias"
 3. Enjoy!  You can start this process over again for another MN on a fresh Linux VPS!
-
-# Bronate if this helped
-
-*Official XXX Discord: 
-
-*Discord in case you need help from me personally: https://discord.gg/MwE4Fuc
-  - I support multiple coins, please state which you need help with
-
-
-# Recommended Tools
-
-- Putty - Easy to use and customizable SSH client.
-- SuperPutty - This allows you to have multiple Putty tabs open in one window, allowing you to easily organize and switch between masternode servers.
 
