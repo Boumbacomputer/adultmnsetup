@@ -33,11 +33,19 @@ sleep 1
 
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo apt-get install wget nano unrar unzip -y
-sudo apt-get install libboost-all-dev libevent-dev software-properties-common -y
+sudo apt-get install unzip ufw -y
+sudo apt-get install libboost-all-dev libevent-dev software-properties-common libminiupnpc-dev -y
 sudo add-apt-repository ppa:bitcoin/bitcoin -y
 sudo apt-get update
 sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
+
+sudo ufw allow ssh/tcp
+sudo ufw limit ssh/tcp
+sudo ufw allow 6969/tcp
+sudo ufw logging on
+echo "y" | sudo ufw enable
+sudo ufw status
+sleep 1
   
 cd /var
 sudo touch swap.img
@@ -49,26 +57,14 @@ sudo free
 sudo echo "/var/swap.img none swap sw 0 0" >> /etc/fstab
 cd
 
-sudo apt-get install -y ufw
-sudo ufw allow ssh/tcp
-sudo ufw limit ssh/tcp
-sudo ufw allow 6969/tcp
-sudo ufw logging on
-echo "y" | sudo ufw enable
-sudo ufw status
+wget https://github.com/zoldur/AdultChain/releases/download/v1.2.2.0/adultchain.tar.gz
+tar xzvf adultchain.tar.gz
+sudo mv adultchaind adultchain-cli /usr/local/bin
 sleep 1
-sudo mv /$USER/adultmnsetup/adultchaind /$USER
-sudo mv /$USER/adultmnsetup/adultchain-cli /$USER
-sleep 1
-cd /$USER
-sleep 1
-sudo chmod +x /$USER/adultchaind
-sleep 1
-sudo chmod +x /$USER/adultchain-cli
-sleep 1
-sudo /$USER/adultchaind
-sleep 1
+
 echo "We are now changing the config file and masternode file"
+mkdir .adultchain
+touch ./.adultchain/adultchain.conf
 echo ""
 echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> /$USER/.adultchain/adultchain.conf
 echo "rpcpassword=pass"`shuf -i 100000-10000000 -n 1` >> /$USER/.adultchain/adultchain.conf
@@ -90,9 +86,11 @@ echo "Updating the masternode.conf file now"
 sleep 1
 echo "$ALIAS $IP:6969 $KEY $TX $INDEX" >> /$USER/.adultchain/masternode.conf
 sleep 1
+
 echo "Starting the daemon again as a masternode"
-sudo /$USER/adultchaind
+adultchaind
 sleep 1
+
 echo ""
-cd /$USER
+
 echo "Please wait for the node to sync with the network"
